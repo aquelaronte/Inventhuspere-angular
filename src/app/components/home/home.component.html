@@ -1,0 +1,40 @@
+<div class="container mx-auto">
+  <h1 class="text-center">Inventusphere</h1>
+  <h2 style="font-size: 1.1rem" class="text-center">
+    Un gestor de inventarios fuera de esta esfera 🚀
+  </h2>
+  <hr class="border border-primary border-2 opacity-50" />
+  <p style="font-size: 1rem; color: black">
+    <span>Inventusphere</span>
+    es una poderosa herramienta que te ayudará a gestionar tu inventario para tu
+    negocio.
+  </p>
+  <p style="font-size: 1rem; color: black">
+    En inventusphere puedes tener todos tus productos a la comodidad de tu
+    navegador, podrás gestionar tu stock y tus ventas, sin papeleo, sin enredos,
+    sin fallos de cálculo.
+  </p>
+  <p style="font-size: 1rem; color: black">
+    Podrás acceder a las ventas y productos disponibles en tu negocio desde la
+    comodidad de tu hogar, negocio o cualquier parte donde estés
+  </p>
+  <p style="font-size: 1rem; color: black">
+    ¿Te motivas a hacer parte de esta experiencia?
+  </p>
+  <div class="d-flex col-6 mx-auto justify-content-center">
+    <button
+      class="btn btn-outline-danger"
+      routerLink="/signup"
+      *ngIf="!isUserVerified"
+    >
+      Comienza ya
+    </button>
+    <button
+      class="btn btn-outline-danger disabled"
+      style="cursor: default"
+      *ngIf="isUserVerified"
+    >
+      Ya iniciaste sesión
+    </button>
+  </div>
+</div>

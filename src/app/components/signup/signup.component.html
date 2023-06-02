@@ -1,0 +1,130 @@
+<div class="row">
+  <div class="col-md-8 mx-auto">
+    <div class="card">
+      <div
+        class="card-header"
+        style="font-weight: bold; font-size: 2rem; color: black"
+      >
+        Regístrate
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="signup()">
+          <div class="mb-3">
+            <label for="firstname" class="form-label">Ingresa tu nombre </label>
+            <input
+              type="text"
+              name="fisrtname"
+              class="form-control"
+              id="firstname"
+              placeholder="ex: John"
+              required
+              [(ngModel)]="signupData.firstname"
+              autofocus
+            />
+            <div class="mb-3">
+              <label for="lastname" class="form-label"
+                >Ingresa tu apellido
+              </label>
+              <input
+                type="text"
+                name="lastname"
+                class="form-control"
+                id="lastname"
+                placeholder="ex: Doe"
+                required
+                [(ngModel)]="signupData.lastname"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label"
+              >Ingresa tu correo electrónico
+            </label>
+            <input
+              type="text"
+              name="email"
+              class="form-control"
+              id="email"
+              placeholder="name@example.com"
+              required
+              [(ngModel)]="signupData.email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label"
+              >Ingresa tu contraseña
+            </label>
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              id="password"
+              placeholder="contraseña"
+              required
+              [(ngModel)]="signupData.password"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="company" class="form-label"
+              >Ingresa el nombre de tu negocio
+            </label>
+            <input
+              type="text"
+              name="company"
+              class="form-control"
+              id="company"
+              placeholder="contraseña"
+              required
+              [(ngModel)]="signupData.company"
+            />
+          </div>
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="isFirstnameInvalid"
+          >
+            Porfavor ingresa tu nombre o ingresa uno válido
+          </div>
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="isLastnameInvalid"
+          >
+            Porfavor ingresa tu apellido o ingresa uno válido
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="isEmailInvalid">
+            Porfavor ingresa una dirección de correo electrónico o ingresa una
+            válida
+          </div>
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="isPasswordInvalid"
+          >
+            Porfavor ingresa una contraseña válida, las contraseñas deben tener
+            mínimo 8 carácteres, máximo 16 carácteres
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="isCompanyInvalid">
+            Porfavor ingresa el nombre de tu negocio o ingresa uno válido
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="isUserRegistered">
+            El usuario está ya registrado
+          </div>
+          <div
+            class="alert alert-success"
+            role="alert"
+            *ngIf="isUserRegisterSuccessfully"
+          >
+            El registro ha sido exitoso, inicia sesión ahora, vas a ser
+            redireccionado en 5 segundos
+          </div>
+          <div>
+            <button type="submit" class="btn btn-outline-primary">
+              Comienza ahora
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

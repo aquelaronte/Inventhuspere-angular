@@ -1,0 +1,46 @@
+<div
+  class="container d-flex justify-content-center align-items-center flex-column"
+  *ngIf="user"
+>
+  <h1 style="margin-bottom: 40px">Bienvenido {{ profile.firstname }} 👋</h1>
+  <h2 style="margin-bottom: 80px; font-size: 1.4rem">
+    ¿Qué quieres hacer hoy?
+  </h2>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">Añade un producto</div>
+          <div class="card-body">
+            <ng-container *ngIf="products.length == 0">
+              <h5 class="card-title">Vemos que aún no has añadido productos</h5>
+              <p class="card-text">
+                Añade tus primeros productos a stock para gozar de los servicios
+                de Inventhuspere 💪
+              </p>
+              <a routerLink="/user/products" class="btn btn-primary"
+                >Añadir productos</a
+              >
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <div class="card-header">Vende algo</div>
+          <div class="card-body">
+            <ng-container *ngIf="products.length == 0">
+              <h5 class="card-title">No tienes productos añadidos todavía</h5>
+              <p class="card-text">
+                Aún no tienes productos añadidos a stock 😔
+              </p>
+              <a routerLink="/user/products" class="btn btn-primary"
+                >Añadir productos</a
+              >
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
